@@ -1,6 +1,6 @@
 #include <stdio.h>
 int r1, c1;
-void Insertion(int m[100][100], int n[100][100], int);
+void Insertion(int m[][100], int n[][100], int);
 void main()
 {
 	int m[100][100];
@@ -52,7 +52,7 @@ void main()
 
 }
 
-void Insertion(int a[100][100], int b[100][100] ,int x)
+void Insertion(int a[][100], int b[][100] ,int x)
 {
 	int i = 1, j;
 	int temp;
