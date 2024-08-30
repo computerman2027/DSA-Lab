@@ -10,7 +10,7 @@
 
 char str[MAX];
 float stack[MAX];
-int top=-1;
+int top = -1;
 int len;
 
 
@@ -44,7 +44,7 @@ void push(float n)
 }
 float evaluate()
 {
-    int i=-0;
+    int i=0;
     float a, b;
     while(i<=MAX)
     {
@@ -53,8 +53,7 @@ float evaluate()
             return stack[top];
             pop();
         }
-
-        if(isdigit(str[i]))
+        else if(isdigit(str[i]))
         {
             push(atoi(&str[i]));
         }
@@ -86,12 +85,13 @@ float evaluate()
                 push(pow(a,b));
             }
         }
+        i++;
     }
 
 }
 void main()
 {
-    int i;
+    int i=0;
     float ans;
 
     // taking the expression as a input
