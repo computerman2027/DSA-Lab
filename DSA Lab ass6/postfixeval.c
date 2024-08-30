@@ -56,7 +56,7 @@ float evaluate()
         else if(isdigit(str[i]))
         {
             printf("pushed %d\n",((int)str[i])-48);
-            push((float)((int)str[i])-65);
+            push((float)((int)str[i])-48);
         }
         else
         {
@@ -64,7 +64,7 @@ float evaluate()
             pop();
             b = stack[top];
             pop();
-            printf("a = %f b = %f",a,b);
+            printf("a = %f b = %f\n",a,b);
             if(str[i]== '+')
             {
                 push(a+b);
