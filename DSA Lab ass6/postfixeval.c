@@ -48,10 +48,10 @@ float evaluate()
     float a, b;
     while(i<=MAX)
     {
+        printf("str[i] = %c\n",str[i]);
         if(str[i]==')')
         {
             return stack[top];
-            pop();
         }
         else if(isdigit(str[i]))
         {
@@ -63,7 +63,7 @@ float evaluate()
             pop();
             b = stack[top];
             pop();
-
+            printf("a = %f b = %f",a,b);
             if(str[i]== '+')
             {
                 push(a+b);
@@ -101,6 +101,8 @@ void main()
         str[i] = getchar();
         if(str[i]=='\n')
         {
+            str[i]=')';
+            str[i+1]='\0';
             break;
         }
         i++;
@@ -108,10 +110,9 @@ void main()
 
     len = strlen(str);
 
-    str[len] = ')';
+    // str[len] = ')';
 
     ans = evaluate();
 
     printf("The answer of the evaluated expression is: %f\n",ans );
 }
-
