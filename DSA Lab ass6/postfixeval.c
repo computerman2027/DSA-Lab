@@ -48,23 +48,23 @@ float evaluate()
     float a, b;
     while(i<=MAX)
     {
-        printf("str[i] = %c\n",str[i]);
+        // printf("str[i] = %c\n",str[i]);
         if(str[i]==')')
         {
             return stack[top];
         }
         else if(isdigit(str[i]))
         {
-            printf("pushed %d\n",((int)str[i])-48);
+            // printf("pushed %d\n",((int)str[i])-48);
             push((float)((int)str[i])-48);
         }
         else
         {
-            a = stack[top];
-            pop();
             b = stack[top];
             pop();
-            printf("a = %f b = %f\n",a,b);
+            a = stack[top];
+            pop();
+            // printf("a = %f b = %f\n",a,b);
             if(str[i]== '+')
             {
                 push(a+b);
